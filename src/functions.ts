@@ -45,4 +45,3 @@ export function convertYesNo(word: string): boolean | null {
     } else {
         return null;
     }
-}
