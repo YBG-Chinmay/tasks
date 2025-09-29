@@ -92,7 +92,8 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "firetruck"],
                 expected: "red",
                 points: 1,
-        );
+            },
+        ]);
         expect(getPublishedQuestions(EMPTY_QUESTIONS)).toEqual([
             {
                 id: 1,
@@ -129,7 +130,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Even this one is not empty",
                 points: 5,
-        );
+            },
+        ]);
         expect(getNonEmptyQuestions(EMPTY_QUESTIONS)).toEqual([
             {
                 id: 1,
@@ -166,6 +168,11 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Even this one is not empty",
                 points: 5,
+            },
+        ]);
+    });
+
+    test("(3 pts) Testing the findQuestion function", () => {
         expect(findQuestion(BLANK_QUESTIONS, 1)).toEqual(BLANK_QUESTIONS[0]);
         expect(findQuestion(BLANK_QUESTIONS, 47)).toEqual(BLANK_QUESTIONS[1]);
         expect(findQuestion(BLANK_QUESTIONS, 2)).toEqual(BLANK_QUESTIONS[2]);
