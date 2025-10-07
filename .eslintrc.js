@@ -38,7 +38,13 @@ module.exports = {
         // https://stackoverflow.com/questions/57802057/eslint-configuring-no-unused-vars-for-typescript
         // Use typescript's checker for unused vars (critical for Enums)
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                argsIgnorePattern: "^_",
+                varsIgnorePattern: "^_",
+            },
+        ],
         // https://typescript-eslint.io/rules/no-use-before-define
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "error",

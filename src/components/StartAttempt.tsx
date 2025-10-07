@@ -16,13 +16,17 @@ export function StartAttempt(): React.JSX.Element {
                 Start Quiz
             </Button>
             <Button
-                onClick={() => setInProgress(!inProgress)}
+                onClick={() => {
+                    setInProgress(!inProgress);
+                }}
                 disabled={inProgress}
             >
                 Stop Quiz
             </Button>
             <Button
-                onClick={() => setAttempts(attempts + 1)}
+                onClick={() => {
+                    setAttempts(attempts + 1);
+                }}
                 disabled={!inProgress}
             >
                 Mulligan

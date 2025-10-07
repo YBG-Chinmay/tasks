@@ -5,7 +5,7 @@ import { Question, QuestionType } from "./interfaces/question";
  * Consumes an array of questions and returns a new array with only the questions
  * that are `published`.
  */
-export function getPublishedQuestions(questions: Question[]): Question[] {
+export function getPublishedQuestions(_questions: Question[]): Question[] {
     return [];
 }
 
@@ -14,7 +14,7 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * considered "non-empty". An empty question has an empty string for its `body` and
  * `expected`, and an empty array for its `options`.
  */
-export function getNonEmptyQuestions(questions: Question[]): Question[] {
+export function getNonEmptyQuestions(_questions: Question[]): Question[] {
     return [];
 }
 
@@ -23,8 +23,8 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
  * question is not found, return `null` instead.
  */
 export function findQuestion(
-    questions: Question[],
-    id: number
+    _questions: Question[],
+    _id: number
 ): Question | null {
     return null;
 }
@@ -33,7 +33,7 @@ export function findQuestion(
  * Consumes an array of questions and returns a new array that does not contain the question
  * with the given `id`.
  */
-export function removeQuestion(questions: Question[], id: number): Question[] {
+export function removeQuestion(_questions: Question[], _id: number): Question[] {
     return [];
 }
 
@@ -41,21 +41,21 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * Consumes an array of questions and returns a new array containing just the names of the
  * questions, as an array.
  */
-export function getNames(questions: Question[]): string[] {
+export function getNames(_questions: Question[]): string[] {
     return [];
 }
 
 /***
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
-export function sumPoints(questions: Question[]): number {
+export function sumPoints(_questions: Question[]): number {
     return 0;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
-export function sumPublishedPoints(questions: Question[]): number {
+export function sumPublishedPoints(_questions: Question[]): number {
     return 0;
 }
 
@@ -76,7 +76,7 @@ id,name,options,points,published
 ` *
  * Check the unit tests for more examples!
  */
-export function toCSV(questions: Question[]): string {
+export function toCSV(_questions: Question[]): string {
     return "";
 }
 
@@ -85,7 +85,7 @@ export function toCSV(questions: Question[]): string {
  * Answers. Each Question gets its own Answer, copying over the `id` as the `questionId`,
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
-export function makeAnswers(questions: Question[]): Answer[] {
+export function makeAnswers(_questions: Question[]): Answer[] {
     return [];
 }
 
@@ -93,7 +93,7 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * Consumes an array of Questions and produces a new array of questions, where
  * each question is now published, regardless of its previous published status.
  */
-export function publishAll(questions: Question[]): Question[] {
+export function publishAll(_questions: Question[]): Question[] {
     return [];
 }
 
@@ -101,7 +101,7 @@ export function publishAll(questions: Question[]): Question[] {
  * Consumes an array of Questions and produces whether or not all the questions
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
-export function sameType(questions: Question[]): boolean {
+export function sameType(_questions: Question[]): boolean {
     return false;
 }
 
@@ -111,10 +111,10 @@ export function sameType(questions: Question[]): boolean {
  * you defined in the `objects.ts` file.
  */
 export function addNewQuestion(
-    questions: Question[],
-    id: number,
-    name: string,
-    type: QuestionType
+    _questions: Question[],
+    _id: number,
+    _name: string,
+    _type: QuestionType
 ): Question[] {
     return [];
 }
@@ -125,9 +125,9 @@ export function addNewQuestion(
  * Question should be the same EXCEPT that its name should now be `newName`.
  */
 export function renameQuestionById(
-    questions: Question[],
-    targetId: number,
-    newName: string
+    _questions: Question[],
+    _targetId: number,
+    _newName: string
 ): Question[] {
     return [];
 }
@@ -140,9 +140,9 @@ export function renameQuestionById(
  * must be set to an empty list.
  */
 export function changeQuestionTypeById(
-    questions: Question[],
-    targetId: number,
-    newQuestionType: QuestionType
+    _questions: Question[],
+    _targetId: number,
+    _newQuestionType: QuestionType
 ): Question[] {
     return [];
 }
@@ -158,10 +158,10 @@ export function changeQuestionTypeById(
  * can make it simpler! Break down complicated tasks into little pieces.
  */
 export function editOption(
-    questions: Question[],
-    targetId: number,
-    targetOptionIndex: number,
-    newOption: string
+    _questions: Question[],
+    _targetId: number,
+    _targetOptionIndex: number,
+    _newOption: string
 ) {
     return [];
 }
@@ -173,9 +173,9 @@ export function editOption(
  * function you defined previously; the `newId` is the parameter to use for the duplicate's ID.
  */
 export function duplicateQuestionInArray(
-    questions: Question[],
-    targetId: number,
-    newId: number
+    _questions: Question[],
+    _targetId: number,
+    _newId: number
 ): Question[] {
     return [];
 }

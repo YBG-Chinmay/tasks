@@ -16,7 +16,9 @@ export function CheckAnswer({
                 <Form.Control
                     type="text"
                     value={userAnswer}
-                    onChange={(e) => setUserAnswer(e.target.value)}
+                    onChange={(e) => {
+                        setUserAnswer(e.target.value);
+                    }}
                 />
             </Form.Group>
             <div>

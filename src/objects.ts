@@ -6,11 +6,11 @@ import { Question, QuestionType } from "./interfaces/question";
  * should default to 1, and `published` should default to false.
  */
 export function makeBlankQuestion(
-    id: number,
-    name: string,
-    type: QuestionType
+    _id: number,
+    _name: string,
+    _type: QuestionType
 ): Question {
-    return {};
+    return {} as Question;
 }
 
 /**
@@ -20,7 +20,7 @@ export function makeBlankQuestion(
  *
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
-export function isCorrect(question: Question, answer: string): boolean {
+export function isCorrect(_question: Question, _answer: string): boolean {
     return false;
 }
 
@@ -30,7 +30,7 @@ export function isCorrect(question: Question, answer: string): boolean {
  * any answer is valid. But for a `multiple_choice_question`, the `answer` must
  * be exactly one of the options.
  */
-export function isValid(question: Question, answer: string): boolean {
+export function isValid(_question: Question, _answer: string): boolean {
     return false;
 }
 
@@ -40,7 +40,7 @@ export function isValid(question: Question, answer: string): boolean {
  * separated by ": ". So for example, the question with id 9 and the
  * name "My First Question" would become "9: My First Q".
  */
-export function toShortForm(question: Question): string {
+export function toShortForm(_question: Question): string {
     return "";
 }
 
@@ -61,7 +61,7 @@ export function toShortForm(question: Question): string {
  * ------------------------------
  * Check the unit tests for more examples of what this looks like!
  */
-export function toMarkdown(question: Question): string {
+export function toMarkdown(_question: Question): string {
     return "";
 }
 
@@ -69,7 +69,7 @@ export function toMarkdown(question: Question): string {
  * Return a new version of the given question, except the name should now be
  * `newName`.
  */
-export function renameQuestion(question: Question, newName: string): Question {
+export function renameQuestion(question: Question, _newName: string): Question {
     return question;
 }
 
@@ -88,7 +88,7 @@ export function publishQuestion(question: Question): Question {
  * over as "Copy of ORIGINAL NAME" (e.g., so "Question 1" would become "Copy of Question 1").
  * The `published` field should be reset to false.
  */
-export function duplicateQuestion(id: number, oldQuestion: Question): Question {
+export function duplicateQuestion(_id: number, oldQuestion: Question): Question {
     return oldQuestion;
 }
 
@@ -99,7 +99,7 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * to the original question's list!
  * Check out the subsection about "Nested Fields" for more information.
  */
-export function addOption(question: Question, newOption: string): Question {
+export function addOption(question: Question, _newOption: string): Question {
     return question;
 }
 
@@ -112,10 +112,10 @@ export function addOption(question: Question, newOption: string): Question {
  * field; but the function call would be the same as if it were a `Question` type!
  */
 export function mergeQuestion(
-    id: number,
-    name: string,
+    _id: number,
+    _name: string,
     contentQuestion: Question,
-    { points }: { points: number }
+    _points: { points: number }
 ): Question {
     return contentQuestion;
 }
