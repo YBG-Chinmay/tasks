@@ -11,10 +11,11 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): React.JSX.Element {
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
-        if (!team.includes(newMember)) {
+        if(!team.includes(newMember)){
             setTeam([...team, newMember]);
         }
     }
@@ -28,10 +29,15 @@ export function ChooseTeam(): React.JSX.Element {
             <h3>Choose Team</h3>
             <Row>
                 <Col>
-                    {PEOPLE.map((option: string) => (
+                    {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={() => { chooseMember(option); }} size="sm">
+                            <Button
+                                onClick={() => {
+                                    chooseMember(option);
+                                }}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>
@@ -42,7 +48,7 @@ export function ChooseTeam(): React.JSX.Element {
                     {team.map((member: string) => (
                         <li key={member}>{member}</li>
                     ))}
-                    <Button onClick={() => { clearTeam(); }}>Clear Team</Button>
+                    <Button onClick={clearTeam}>Clear Team</Button>
                 </Col>
             </Row>
         </div>

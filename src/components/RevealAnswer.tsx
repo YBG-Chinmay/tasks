@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function RevealAnswer(): React.JSX.Element {
-    const [visible, setVisible] = useState<boolean>(false);
-
-    const toggleVisibility = () => {
-        setVisible(!visible);
-    };
+    const [answer, setAnswerVisible] = useState<boolean>(false);
 
     return (
-        <div>
-            <Button onClick={toggleVisibility}>Reveal Answer</Button>
-            {visible && <span>42</span>}
-        </div>
+        <span>
+            <Button
+                onClick={() => {
+                    setAnswerVisible(!answer);
+                }}
+            >
+                Reveal Answer
+            </Button>
+            {answer && <div>42</div>}
+        </span>
     );
 }

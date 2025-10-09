@@ -4,17 +4,18 @@ import { Button } from "react-bootstrap";
 export const COLORS = ["red", "blue", "green"];
 const DEFAULT_COLOR_INDEX = 0;
 
-function ChangeColor({ 
-    colorIndex, 
-    setColorIndex 
-}: { 
-    colorIndex: number; 
-    setColorIndex: (index: number) => void; 
-}): React.JSX.Element {
+interface ColorProps {
+    colorIndex: number;
+    setColorIndex?: (index: number) => void;
+}
+
+function ChangeColor({ colorIndex, setColorIndex }: ColorProps): React.JSX.Element {
     return (
         <Button
             onClick={() => {
-                setColorIndex((1 + colorIndex) % COLORS.length);
+                if (setColorIndex) {
+                    setColorIndex((1 + colorIndex) % COLORS.length);
+                }
             }}
         >
             Next Color
@@ -22,7 +23,7 @@ function ChangeColor({
     );
 }
 
-function ColorPreview({ colorIndex }: { colorIndex: number }): React.JSX.Element {
+function ColorPreview({ colorIndex }: ColorProps): React.JSX.Element {
     return (
         <div
             data-testid="colored-box"
@@ -40,7 +41,6 @@ function ColorPreview({ colorIndex }: { colorIndex: number }): React.JSX.Element
 
 export function ColoredBox(): React.JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
-    
     return (
         <div>
             <h3>Colored Box</h3>

@@ -2,35 +2,45 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function CycleHoliday(): React.JSX.Element {
-    const holidays = [
-        "Christmas",
-        "Easter",
-        "Halloween",
-        "New Year",
-        "Thanksgiving"
-    ];
+    const [holiday, setHoliday] = useState<string>("🪔");
 
-    const [currentHoliday, setCurrentHoliday] = useState<string>("Christmas");
+    function AdvanceAlpha(): void {
+        if (holiday == "🪔") {
+            setHoliday("🎄");
+        } else if (holiday == "🎄") {
+            setHoliday("🎃");
+        } else {
+            setHoliday("🪔");
+        }
+    }
 
-    const cycleAlphabetically = () => {
-        const currentIndex = holidays.indexOf(currentHoliday);
-        const nextIndex = (currentIndex + 1) % holidays.length;
-        setCurrentHoliday(holidays[nextIndex]);
-    };
-
-    const cycleByYear = () => {
-        const currentIndex = holidays.indexOf(currentHoliday);
-        const nextIndex = (currentIndex + 1) % holidays.length;
-        setCurrentHoliday(holidays[nextIndex]);
-    };
+    function AdvanceNum(): void {
+        if (holiday == "🪔") {
+            setHoliday("🎃");
+        } else if (holiday == "🎃") {
+            setHoliday("🎄");
+        } else {
+            setHoliday("🪔");
+        }
+    }
 
     return (
-        <div>
-            <span>Holiday: {currentHoliday}</span>
-            <div>
-                <Button onClick={cycleAlphabetically}>Alphabet</Button>
-                <Button onClick={cycleByYear}>Year</Button>
-            </div>
-        </div>
+        <span>
+            <Button
+                onClick={() => {
+                    AdvanceAlpha();
+                }}
+            >
+                Advance by Alphabet
+            </Button>
+            <Button
+                onClick={() => {
+                    AdvanceNum();
+                }}
+            >
+                Advance by Year
+            </Button>
+            <div>`Holiday: ${holiday}</div>
+        </span>
     );
 }
